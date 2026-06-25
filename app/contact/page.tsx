@@ -184,10 +184,13 @@ export default function ContactPage() {
             whileHover={status !== "loading" ? { 
               scale: 1.04, 
               boxShadow: "0 15px 40px rgba(0, 112, 243, 0.3)",
-              y: -2
+              y: -2,
+              transition: { type: "spring", damping: 12, stiffness: 150, duration: 0.3 }
             } : {}}
-            whileTap={status !== "loading" ? { scale: 0.96 } : {}}
-            transition={{ type: "spring", damping: 12, stiffness: 150, duration: 0.3 }}
+            whileTap={status !== "loading" ? { 
+              scale: 0.96,
+              transition: { type: "spring", damping: 12, stiffness: 150, duration: 0.3 }
+            } : {}}
             className="w-full bg-[#0070f3] hover:bg-[#3b82f6] disabled:bg-[#6b7280] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-medium transition-all duration-400 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/30 disabled:cursor-not-allowed text-sm sm:text-base"
           >
             {status === "loading" ? "Envoi en cours..." : "Envoyer"}
